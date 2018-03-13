@@ -107,6 +107,8 @@ for link in links:
             title = block.text.strip()
             csvMth = title.split()[0].strip()[:3]
             csvYr = title.split()[-1].strip()[-4:]
+            if '20' not in csvYr:
+                csvYr = '20'+csvYr
             csvMth = convert_mth_strings(csvMth.upper())
             data.append([csvYr, csvMth, file_urls])
 
